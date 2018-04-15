@@ -1,0 +1,18 @@
+{
+  "name": "games_backlog",
+  "version": "1.0.0",
+  "description": "An application to track the games that I have played in 2018 and what games are on my to-play list.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Taylor Hall",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "moment": "^2.20.1",
+    "mongoose": "^4.13.7"
+  }
+}

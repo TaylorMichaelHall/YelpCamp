@@ -1,0 +1,45 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= game.gameName %></div>
+        <div class="ui top attached">
+            <div class="item">
+                <img class="ui centered rounded image" src="<%= game.image %>">
+                <div class="description">
+                    <p><%= game.comments %></p>
+                </div>
+                <div>
+                    <h4 class="ui horizontal divider header">
+                        <i class="bar chart icon"></i>
+                        Details
+                    </h4>
+                    <% if(game.nowPlaying === true){ %>
+                        <p>Now playing!</p>
+                    <% } %>
+                    
+                    <div class="ui orange button">
+                        <p><%= game.platform %></p>
+                    </div>
+                    <p><%= game.notes %></p>
+                    <h4 class="ui horizontal divider header">
+                      <i class="bar chart icon"></i>
+                      Genres
+                    </h4>
+                    <div class="ui green button">
+                        <p><%= game.genreOne %></p>
+                    </div>
+                    <div class="ui green button">
+                        <p><%= game.genreTwo %></p>
+                    </div>
+                </div>
+                <h4 class="ui horizontal divider header">
+                    <i class="Options icon"></i>
+                    Options
+                </h4>
+                <a class="ui orange basic button" href="/games/<%= game._id %>/edit"> <i class="small edit icon"></i>Edit</a>
+                <form id="delete" action="/games/<%= game._id %>?_method=DELETE" method="POST">
+                    <button class="ui red basic button"> <i class="small erase icon"></i>Delete</button>    
+                </form>
+            </div>
+        </div>
+   </div>
+<% include ./partials/footer %>

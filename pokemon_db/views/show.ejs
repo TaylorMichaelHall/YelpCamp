@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= pokemon.pokemonName %></div>
+        <div class="ui top attached">
+            <div class="item">
+                <img class="ui centered rounded image" src="<%= pokemon.image %>">
+                <div class="content">
+                    <span><%= pokemon.created.toDateString() %></span>
+                </div>
+                <div class="description">
+                    <p><%= pokemon.body %></p>
+                </div>
+                <div>
+                    <h4 class="ui horizontal divider header">
+                      <i class="bar chart icon"></i>
+                      Types
+                    </h4>
+                    <div class="ui red button">
+                        <p><%= pokemon.typeOne %></p>
+                    </div>
+                    <div class="ui blue button">
+                        <p><%= pokemon.typeTwo %></p>
+                    </div>
+                </div>
+                <h4 class="ui horizontal divider header">
+                    <i class="Options icon"></i>
+                    Options
+                </h4>
+                <a class="ui orange basic button" href="/pokemon/<%= pokemon._id %>/edit">Edit</a>
+                <form id="delete" action="/pokemon/<%= pokemon._id %>?_method=DELETE" method="POST">
+                    <button class="ui red basic button">Delete</button>    
+                </form>
+            </div>
+        </div>
+   </div>
+<% include ./partials/footer %>

@@ -1,0 +1,45 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+    <div class="ui huge header">New Game Entry</div>
+    <form class="ui form" action="/games" method="POST">
+        <div class="field">
+            <label>Name</label>
+            <input type="text" name="games[gameName]" placeholder="name">
+        </div>
+        <div class="field">
+            <label>Image</label>
+        <input type="text" name="games[image]" placeholder="image url">
+        </div>
+        <div class="field">
+            <label>Now Playing</label>
+        <input type="checkbox" name="games[nowPlaying]">
+        </div>
+        <div class="field">
+            <label>Date Started</label>
+        <input type="date" value="2017-06-01" name="games[dateStarted]">
+        </div>
+        <div class="field">
+            <label>Platform</label>
+        <input type="text" name="games[platform]" placeholder="PC, Switch, 3DS, etc">
+        </div>
+        <div class="field">
+            <label>Genre 1</label>
+        <input type="text" name="games[genreOne]" placeholder="type 1">
+        </div>
+        <div class="field">
+            <label>Genre 2</label>
+        <input type="text" name="games[genreTwo]" placeholder="type 2">
+        </div>
+        <div class="field">
+            <label>Playthrough notes</label>
+            <textarea name="games[notes]" placeholder="Used cheats etc"></textarea>
+        </div>
+        <div class="field">
+            <label>Game comments</label>
+            <textarea name="games[comments]" placeholder="Your thoughts and feelings. A mini-review."></textarea>
+        </div>
+        
+        <input class="ui blue big inverted button" type="submit">
+    </form>
+</div>
+<% include ./partials/footer %>

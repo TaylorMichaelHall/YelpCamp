@@ -1,0 +1,29 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+    <div class="ui huge header">New Pokemon</div>
+    <form class="ui form" action="/pokemon" method="POST">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="pokemon[pokemonName]" placeholder="name">
+        </div>
+        <div class="field">
+            <label>Image</label>
+        <input type="text" name="pokemon[image]" placeholder="image">
+        </div>
+        <div class="field">
+            <label>Type 1</label>
+        <input type="text" name="pokemon[typeOne]" placeholder="type 1">
+        </div>
+        <div class="field">
+            <label>Type 2</label>
+        <input type="text" name="pokemon[typeTwo]" placeholder="type 2">
+        </div>
+        <div class="field">
+            <label>Body</label>
+            <textarea name="pokemon[body]"></textarea>
+        </div>
+        
+        <input class="ui blue big inverted button" type="submit">
+    </form>
+</div>
+<% include ./partials/footer %>

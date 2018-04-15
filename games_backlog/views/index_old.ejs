@@ -1,0 +1,40 @@
+<% include ./partials/header %>
+<div class= "ui container main">
+    <div class="ui three column grid">
+        <% games.reverse().forEach(function(game){ %>
+        <div class="column">
+            <div class="ui raised medium card">
+                <div class="image">
+                    <a href="/games/<%= game._id %>">
+                        <img class="ui fluid rounded image" src="<%= game.image %>">
+                    </a>
+                </div>
+                <div class="content">
+                    <div class="header"><%= game.gameName %></div>
+                    <div class="meta">
+                        <a><%= game.platform %></a>
+                        <span class="right floated">Release date</span>
+                    </div>
+                    
+                </div>
+                <div class="description">
+                    <% if(game.nowPlaying === true){ %>
+                        <p>Now playing!</p>
+                    <% } else { %>
+                        <p>Not now playing</p>
+                    <% } %>
+                </div>
+                <div class="extra content">
+                    <span class="right floated">
+                        <%= game.genreTwo %>
+                    </span>
+                    <span>
+                       <%= game.genreOne %>
+                    </span>
+                </div>
+            </div>        
+        </div>
+        <% }) %> 
+    </div>
+</div>
+<% include ./partials/footer %>

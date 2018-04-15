@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+<div class= "ui main grid container">
+    <div class="ui doubling six cards">
+        <% game.reverse().forEach(function(game){ %>
+             <div class="card">
+                 <a class="image" href="/games/<%=game._id%>">
+                        <img src="<%= game.image %>">
+                 </a>
+                 <div class="content">
+                    <a class="header" href="/games/<%=game._id%>"><%=game.gameName%></a>
+                    <div class="meta">
+                        <a><%= game.platform %></a>
+                    </div>
+                    <div class="description">
+                        (game played status here)
+                    </div>
+                 </div>
+                 
+                 <div class="extra content">
+                    <span class="right floated">
+                        Started date
+                    </span>
+                    <span>
+                         <%=game.genreOne%>, <%=game.genreTwo%>
+                    </span>
+                 </div>
+             </div>
+        <% }) %> 
+    </div>
+</div>
+<% include ./partials/footer %>
